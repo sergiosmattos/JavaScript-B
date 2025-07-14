@@ -124,4 +124,81 @@ function calcularTabuada() {
     numero + " * 9 = " + numero * 9 + "\n" +
     numero + " * 10 = " + numero * 10;
 
-}s
+}
+
+//EX: 8 - CONTADOR
+
+let contador = Number(0);
+
+document.getElementById("resultado8").innerText = "Contador está em: " + contador;
+
+function contarNumeros() {
+
+    if (contador > 10) {
+
+        contador = Number(0);
+
+    }
+
+    document.getElementById("resultado8").innerText = "Contador está em: " + contador;
+
+    contador++;
+
+}
+
+//EX: 9 - MÉDIAS DAS NOTAS
+
+function calcularMedia() {
+
+    let nota1 = Number(document.getElementById("numero7").value);
+
+    let nota2 = Number(document.getElementById("numero8").value);
+
+    let nota3 = Number(document.getElementById("numero9").value);
+
+    let media = (nota1 + nota2 + nota3) / 3;
+
+    if (media >= 6) {
+
+        document.getElementById("resultado9").innerText = "Aluno Aprovado! Média das Notas: " + media.toFixed(2);
+        
+    } else {
+
+        document.getElementById("resultado9").innerText = "Aluno Reprovado! Média das Notas: " + media.toFixed(2);
+
+    }
+
+}
+
+//EX: 10 - CONVERTER CELCIUS
+
+function converterCelcius() {
+
+    let celcius = Number(document.getElementById("numero10").value);
+
+    let fahrenheit = (celcius * 9/5) + 32;
+
+    document.getElementById("resultado10").innerText = celcius + "°C em fahrenheit: " + fahrenheit + "°F";
+
+}
+
+//EX: 11 - DIA DA SEMANA
+
+function mostrarDiaSemana() {
+
+    let valorDia = Number(document.getElementById("numero11").value);
+
+    let diaSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+
+    if ( valorDia >= 1 && valorDia <= 7 ) {
+    
+        document.getElementById("resultado11").innerText = "Seu dia é: " + diaSemana[valorDia - 1];
+
+    }
+    else {
+
+        document.getElementById("resultado11").innerText = "Nenhum dia selecionado!";
+
+    }
+
+}
