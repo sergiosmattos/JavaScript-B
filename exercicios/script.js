@@ -237,20 +237,20 @@ function verificarSenha() {
 
 let contadorDecrescente = Number(10);
 
-document.getElementById("resultado13").innerText = "Contador está em: " + contadorDecrescente;
-
 function contarNumerosDecrescente() {
 
-    contadorDecrescente
+    setInterval(decrementarValor, 150);
 
-    if (contadorDecrescente <= 0) {
+}
 
-        contadorDecrescente = Number(10);
+function decrementarValor() {
+
+    if ( contadorDecrescente > 0 ) {
+
+        contadorDecrescente--;
 
     }
 
     document.getElementById("resultado13").innerText = "Contador está em: " + contadorDecrescente;
-
-    contadorDecrescente--;
 
 }
