@@ -128,21 +128,23 @@ function calcularTabuada() {
 
 //EX: 8 - CONTADOR
 
-let contador = Number(0);
+let contadorCrescente = Number(0);
 
-document.getElementById("resultado8").innerText = "Contador está em: " + contador;
+document.getElementById("resultado8").innerText = "Contador está em: " + contadorCrescente;
 
-function contarNumeros() {
+function contarNumerosCrescente() {
 
-    if (contador > 10) {
+    contadorCrescente
 
-        contador = Number(0);
+    if (contadorCrescente > 10) {
+
+        contadorCrescente = Number(0);
 
     }
 
-    document.getElementById("resultado8").innerText = "Contador está em: " + contador;
+    document.getElementById("resultado8").innerText = "Contador está em: " + contadorCrescente;
 
-    contador++;
+    contadorCrescente++;
 
 }
 
@@ -200,5 +202,55 @@ function mostrarDiaSemana() {
         document.getElementById("resultado11").innerText = "Nenhum dia selecionado!";
 
     }
+
+}
+
+//EX: 12 - VERIFICAR SENHA
+
+function verificarSenha() {
+
+    let senhaDigitada = String(document.getElementById("senha").value);
+
+    console.log(senhaDigitada);
+
+    let senhaArmazenada = String("1234");
+
+    if ( senhaDigitada == senhaArmazenada ) {
+
+        document.getElementById("resultado12").innerText = "Acesso Permitido.";
+
+    }
+    else if ( senhaDigitada == "" ) {
+
+        document.getElementById("resultado12").innerText = "Digite uma senha!";
+
+    }
+    else {
+
+        document.getElementById("resultado12").innerText = "Senha incorreta.";
+
+    }
+
+}
+
+//EX: 13 - CONTAGEM REGRESSIVA
+
+let contadorDecrescente = Number(10);
+
+document.getElementById("resultado13").innerText = "Contador está em: " + contadorDecrescente;
+
+function contarNumerosDecrescente() {
+
+    contadorDecrescente
+
+    if (contadorDecrescente <= 0) {
+
+        contadorDecrescente = Number(10);
+
+    }
+
+    document.getElementById("resultado13").innerText = "Contador está em: " + contadorDecrescente;
+
+    contadorDecrescente--;
 
 }
