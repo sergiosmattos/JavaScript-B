@@ -1,7 +1,4 @@
-
 //EX 1 - SOMA SIMPLES 
-
-
 
 function somar() {
 
@@ -51,21 +48,7 @@ function verificarImpar() {
 
     let numero = Number (document.getElementById("numero3").value);
 
-    if ( numero == 0 ) {
-
-        document.getElementById("resultado4").innerText = "Número é zero.";
-
-    } 
-    else if ( numero % 2 == 0 ) {
-        
-        document.getElementById("resultado4").innerText = "Número é par.";
-
-    } 
-    else {
-
-        document.getElementById("resultado4").innerText = "Número é impar.";
-
-    }
+    document.getElementById("resultado4").innerText = numero % 2 == 0 ? "O número " + numero + " é par." : "O número " + numero + " é impar.";
 
 }
 
@@ -110,41 +93,45 @@ function verificarMaior() {
 
 function calcularTabuada() {
 
-    let numero = Number (document.getElementById("numero6").value);
+    document.getElementById("resultado7").innerText = "";
 
-    document.getElementById("resultado7").innerText = 
-    numero + " * 1 = " + numero * 1 + "\n" +
-    numero + " * 2 = " + numero * 2 + "\n" +
-    numero + " * 3 = " + numero * 3 + "\n" +
-    numero + " * 4 = " + numero * 4 + "\n" +
-    numero + " * 5 = " + numero * 5 + "\n" +
-    numero + " * 6 = " + numero * 6 + "\n" +
-    numero + " * 7 = " + numero * 7 + "\n" +
-    numero + " * 8 = " + numero * 8 + "\n" +
-    numero + " * 9 = " + numero * 9 + "\n" +
-    numero + " * 10 = " + numero * 10;
+    let numero = Number (document.getElementById("numero6").value);
+    let novoP = document.createElement("p");
+
+    for ( let i = 1; i < 10; i++ ) {
+
+        let conteudo = document.createTextNode(`${numero} * ${i} = ${numero * i}`);
+        novoP.appendChild(conteudo);
+        novoP.appendChild(document.createElement("br"));
+
+    }
+
+    document.getElementById("resultado7").appendChild(novoP);
 
 }
 
 //EX: 8 - CONTADOR
 
-let contadorCrescente = Number(0);
+function contarProgressivamente() {
 
-document.getElementById("resultado8").innerText = "Contador está em: " + contadorCrescente;
+    let contador = Number(0);
 
-function contarNumerosCrescente() {
+    function incrementarValor() {
 
-    contadorCrescente
+        document.getElementById("resultado8").innerText = "Contador está em: " + contador;
 
-    if (contadorCrescente > 10) {
-
-        contadorCrescente = Number(0);
+        contador++;
+    
+        if ( contador > 10 ) {
+            
+            clearInterval(idIntervalo);
+            
+        }
 
     }
 
-    document.getElementById("resultado8").innerText = "Contador está em: " + contadorCrescente;
-
-    contadorCrescente++;
+    incrementarValor();
+    idIntervalo = setInterval(incrementarValor, 500);
 
 }
 
@@ -211,23 +198,26 @@ function verificarSenha() {
 
     let senhaDigitada = String(document.getElementById("senha").value);
 
-    console.log(senhaDigitada);
-
     let senhaArmazenada = String("1234");
 
     if ( senhaDigitada == senhaArmazenada ) {
 
         document.getElementById("resultado12").innerText = "Acesso Permitido.";
 
-    }
-    else if ( senhaDigitada == "" ) {
+        console.log("As senhas conferem.");
 
-        document.getElementById("resultado12").innerText = "Digite uma senha!";
+    }
+    else if ( senhaDigitada != "" ) {
+
+        document.getElementById("resultado12").innerText = "Senha incorreta.";
+
+        console.log("Senha digitada: " + senhaDigitada);
+        console.log("Senha correta: " + senhaArmazenada);
 
     }
     else {
-
-        document.getElementById("resultado12").innerText = "Senha incorreta.";
+        
+        document.getElementById("resultado12").innerText = "Digite uma senha!";
 
     }
 
@@ -235,22 +225,25 @@ function verificarSenha() {
 
 //EX: 13 - CONTAGEM REGRESSIVA
 
-let contadorDecrescente = Number(10);
+function contarRegressivamente() {
 
-function contarNumerosDecrescente() {
+    let contador = Number(10);
 
-    setInterval(decrementarValor, 150);
+    function decrementarValor() {
 
-}
+        document.getElementById("resultado13").innerText = "Contador está em: " + contador;
 
-function decrementarValor() {
-
-    if ( contadorDecrescente > 0 ) {
-
-        contadorDecrescente--;
+        contador--;
+    
+        if ( contador < 0 ) {
+            
+            clearInterval(idIntervalo);
+            
+        }
 
     }
 
-    document.getElementById("resultado13").innerText = "Contador está em: " + contadorDecrescente;
+    decrementarValor();
+    idIntervalo = setInterval(decrementarValor, 500);
 
 }

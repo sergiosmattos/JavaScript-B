@@ -1,10 +1,12 @@
 
-let numero1 = Number(prompt("Digite o primeiro número: "));
+/*let numero1 = Number(prompt("Digite o primeiro número: "));
 let numero2 = Number(prompt("Digite o segundo número: "));
 alert ( "Resultado da Soma: " + (numero1 + numero2) );
 
 var global = "Variavel Global";
 console.log(global);
+*/
+
 
 function saudacao() {
 
@@ -32,6 +34,7 @@ function exemplo2() {
 }
 
 exemplo2();
+
 // console.log(local);
 
 let x = 10;
@@ -48,3 +51,26 @@ console.log(x);
 const _constante = "texto";
 
 console.log(_constante);
+
+// Teste 1 - Condição em Váriavel
+
+let valorBoolean = false;
+
+let considerarValorBooolean = valorBoolean ? "Sim!" : "Não.";
+console.log("1) A resposta é " + considerarValorBooolean);
+
+// Teste 2 - Condição em Váriavel
+
+let numeroA = 10;
+let numeroB = 8;
+
+let numeroABMaior = numeroA > numeroB ? "é " + numeroA : "não é " + numeroA;
+console.log("2) maior número " + numeroABMaior);
+
+// Teste 3 - Condição em Váriavel
+
+let numeroC = 10;
+let numeroD = 10;
+
+let numeroCDMaior = numeroC > numeroD ? numeroC + " é o maior número!" : numeroC < numeroD ? numeroD + " é o maior número!" : "Os números são Iguais! (" + numeroD + ")" ;
+console.log("3) " + numeroCDMaior);
